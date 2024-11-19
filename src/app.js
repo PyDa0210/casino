@@ -8,8 +8,8 @@ import { errorHandler } from './middlewares/errorHandler.js';
 //importar *file routes
 import userRoutes from './routes/user.routes.js';
 import authRoutes from './routes/auth.routes.js';
-// import footballRoutes from './routes/football.routes';
-// import betRoutes from './routes/bet.routes';
+import footballRoutes from './routes/football.routes.js';
+import betRoutes from './routes/bet.routes.js';
 
 
 const app  = express()
@@ -30,8 +30,8 @@ app.use(cors({
 // Rutas
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
-// app.use('/api/football', footballRoutes);
-// app.use('/api/bet',betRoutes);
+app.use('/api/foot', footballRoutes);
+app.use('/api/bet',betRoutes);
 
 
 
