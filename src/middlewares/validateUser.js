@@ -58,3 +58,18 @@ export const validateUser = (req, res, next) => {
     // Si todo está bien, pasar al siguiente middleware o controlador
     next();
 };
+
+export const validateLogin = (req, res, next) => {
+    const { correo, password } = req.body;
+
+    if (!correo || !password) {
+        return res.status(400).json({ error: 'El correo y la contraseña son obligatorios.' });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(correo)) {
+        return res.status(400).json({ error: 'El correo no tiene un formato válido.' });
+    }
+
+    next();
+};
