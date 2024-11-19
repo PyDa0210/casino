@@ -31,7 +31,7 @@ app.use(cors({
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/foot', footballRoutes);
-app.use('/api/bet',betRoutes);
+app.use('/api/bets',betRoutes);
 
 
 

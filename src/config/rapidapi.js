@@ -9,4 +9,5 @@ export const RAPIDAPI_CONFIG = {
         'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
         'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
     },
+    
 };
