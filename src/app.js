@@ -10,9 +10,11 @@ import userRoutes from './routes/user.routes.js';
 import authRoutes from './routes/auth.routes.js';
 import footballRoutes from './routes/football.routes.js';
 import betRoutes from './routes/bet.routes.js';
+import dashboardRoutes from './routes/dashboard.routes.js';
+import transactionRoutes from './routes/transaction.routes.js';
 
 
-const app  = express()
+const app = express()
 
 // Middlewares globales
 app.use(morgan('dev'));
@@ -20,9 +22,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(errorHandler);
 app.use(cors({
-    origin: 'http://127.0.0.1:5173', // O 'http://localhost:5173' se modifica dependiento del port de front
+    origin: 'http://localhost:5173', // O 'http://localhost:5173' se modifica dependiento del port de front
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
 }));
 
@@ -31,8 +33,9 @@ app.use(cors({
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/foot', footballRoutes);
-app.use('/api/bets',betRoutes);
-
+app.use('/api/bets', betRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/transactions', transactionRoutes);
 
 
 export default app;

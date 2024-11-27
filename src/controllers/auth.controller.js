@@ -150,3 +150,19 @@ export const resetPassword = async (req, res) => {
         res.status(500).json({ error: 'Error al restablecer contraseña', details: error.message });
     }
 };
+
+// Obtener datos básicos del usuario autenticado
+export const getAuthenticatedUser = async (req, res) => {
+    try {
+        const user = req.user; // `req.user` ya contiene el usuario autenticado
+        res.status(200).json({
+            id: user._id,
+            nombres: user.nombres,
+            apellidos: user.apellidos,
+            correo: user.correo,
+            saldo: user.saldo, // Incluimos el saldo
+        });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener los datos del usuario.' });
+    }
+};
