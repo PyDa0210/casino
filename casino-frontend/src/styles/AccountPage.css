@@ -1,0 +1,69 @@
+/* AccountPage.css */
+
+/* Contenedor principal */
+.account-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Título */
+.account-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Botón básico */
+.button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+/* Botón azul */
+.button-primary {
+    background-color: #007BFF;
+    color: #FFF;
+}
+
+.button-primary:hover {
+    background-color: #0056b3;
+}
+
+.button-primary:active {
+    transform: scale(0.95);
+}
+
+/* Botón verde */
+.button-success {
+    background-color: #143a8d;
+    color: #FFF;
+}
+
+.button-success:hover {
+    background-color: #0781ec;
+}
+
+.button-success:active {
+    transform: scale(0.95);
+}
+
+/* Mensaje de error */
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de botones */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
