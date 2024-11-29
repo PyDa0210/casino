@@ -11,6 +11,7 @@
   z-index: 1000;
 }
 
+/* Contenedor del contenido */
 .header__content {
   display: flex;
   justify-content: space-between;
@@ -20,6 +21,7 @@
   padding: 0.5rem 1rem;
 }
 
+/* Logo */
 .header__logo {
   display: flex;
   align-items: center;
@@ -28,147 +30,106 @@
 }
 
 .header__logo-image {
-  margin-right: 10px;
   width: 50px;
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  transition: transform 0.3s ease;
 }
 
-.header__menu-text {
-  display: flex;
-  align-items: center;
-}
-
-.header__dice-icon {
-  margin-left: 5px;
-}
-
+/* Menú */
 .header__menu {
-  list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.header__menu li {
-  margin: 0;
-}
-
 .header__menu a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   font-size: 1rem;
-  padding: 10px;
-  transition: color 0.3s ease;
 }
 
 .header__menu a:hover {
-  color: #61dafb;
+  text-decoration: underline;
 }
 
-/* Botón hamburguesa para móviles */
+/* Botón de hamburguesa */
 .header__menu-toggle {
-  display: none;
+  display: none; /* Inicialmente oculto */
   background: none;
   border: none;
-  padding: 10px;
   cursor: pointer;
+  padding: 10px;
 }
 
 .header__menu-icon {
-  width: 25px;
+  display: block;
+  width: 30px;
   height: 3px;
   background-color: white;
+  border-radius: 3px;
   position: relative;
-  display: block;
-  transition: all 0.3s ease;
 }
 
 .header__menu-icon::before,
 .header__menu-icon::after {
   content: '';
   position: absolute;
-  width: 25px;
+  width: 30px;
   height: 3px;
   background-color: white;
-  transition: all 0.3s ease;
+  border-radius: 3px;
+  left: 0;
 }
 
 .header__menu-icon::before {
-  top: -8px;
+  top: -10px;
 }
 
 .header__menu-icon::after {
-  top: 8px;
+  top: 10px;
 }
 
-/* Cambios en la apariencia del icono cuando se abre el menú */
-.header__menu-toggle.open .header__menu-icon {
-  background: transparent;
-}
-
-.header__menu-toggle.open .header__menu-icon::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-
-.header__menu-toggle.open .header__menu-icon::after {
-  transform: rotate(-45deg);
-  top: 0;
-}
-
-/* Menú desplegable */
+/* Menú desplegable (oculto por defecto) */
 .header__nav {
   display: flex;
-  justify-content: center;
-  width: 100%;
 }
 
 .header__nav--open {
-  display: block;
+  display: block; /* Mostrar cuando se hace clic en el botón */
 }
 
-.header__menu {
-  display: flex;
-  gap: 20px;
+.header__menu li {
+  display: inline-block;
 }
 
+/* Estilo para hacer que el menú sea responsivo */
 @media (max-width: 768px) {
-  /* Ocultar el menú en pantallas pequeñas */
-  .header__menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #282c34;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 20px;
-    border-radius: 5px;
-    z-index: 999;
-  }
-
-  /* Mostrar el menú cuando se activa */
-  .header__nav--open {
-    display: block;
-  }
-
-  /* Mostrar botón hamburguesa */
+  /* Mostrar el botón de hamburguesa */
   .header__menu-toggle {
     display: block;
   }
 
-  /* Estilos para los enlaces en el menú móvil */
-  .header__menu a {
-    text-align: center;
-    padding: 15px;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #444;
+  /* Ocultar el menú de navegación en pantallas pequeñas por defecto */
+  .header__nav {
+    display: none;
+    width: 100%;
+    background-color: #282c34;
+    position: absolute;
+    top: 60px; /* Asegura que se muestre debajo del header */
+    left: 0;
+    padding: 1rem;
   }
 
-  /* Evitar que el menú se solape con el contenido */
-  .header__menu a:last-child {
-    border-bottom: none;
+  .header__nav--open {
+    display: block; /* Mostrar menú cuando esté abierto */
+  }
+
+  .header__menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .header__menu li {
+    text-align: center;
   }
 }

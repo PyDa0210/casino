@@ -20,9 +20,13 @@ const Header = () => {
             Bienvenido,&nbsp;<FaDice className="header__dice-icon" />&nbsp;<UserInfo showEmail={false} showBalance={false} />
           </span>
         </Link>
+
+        {/* Botón de hamburguesa */}
         <button className="header__menu-toggle" onClick={toggleMenu}>
           <span className="header__menu-icon"></span>
         </button>
+
+        {/* Menú de navegación */}
         <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
           <ul className="header__menu">
             <li>
