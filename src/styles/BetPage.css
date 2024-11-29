@@ -85,7 +85,7 @@ body {
 .bet-page button {
   background: linear-gradient(135deg, #ff6f61, #ff8a50, #5e35b1);
   border: none;
-  border-radius: 10px;
+  border-radius: 11px;
   padding: 0.8rem;
   font-size: 1.2rem;
   font-weight: bold;

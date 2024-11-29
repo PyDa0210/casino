@@ -13,7 +13,7 @@ body {
   }
 
   ::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de scroll */
+    width: 13px; /* Ancho de la barra de scroll */
   }
   
   ::-webkit-scrollbar-track {
