@@ -68,78 +68,52 @@
   border-radius: 5px;
 }
 
-/* Botón de hamburguesa */
+/* Botón de menú en dispositivos móviles */
 .header__menu-toggle {
-  display: none; /* Por defecto no se muestra */
-  background: none;
+  display: none; /* Ocultar el botón por defecto */
+  background: transparent;
   border: none;
+  color: white;
+  font-size: 2rem;
   cursor: pointer;
-  padding: 10px;
 }
 
-.header__menu-icon {
-  width: 25px;
-  height: 2px;
-  background-color: white;
-  position: relative;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.header__menu-icon::before,
-.header__menu-icon::after {
-  content: '';
-  width: 25px;
-  height: 2px;
-  background-color: white;
+/* Menú oculto en dispositivos móviles */
+.header__nav--mobile {
+  display: none; /* El menú estará oculto por defecto */
+  flex-direction: column;
   position: absolute;
-  transition: all 0.3s ease;
+  top: 100%;
+  right: 0;
+  background-color: #282c34;
+  width: 100%;
+  padding: 1rem 0;
 }
 
-.header__menu-icon::before {
-  top: -8px;
+.header__nav--mobile.open {
+  display: flex;
 }
 
-.header__menu-icon::after {
-  top: 8px;
-}
-
-/* Menú en pantallas pequeñas */
-.header__nav--open {
-  display: block; /* Muestra el menú */
-}
-
+/* Mostrar el botón de menú en dispositivos móviles */
 @media (max-width: 768px) {
   .header__menu {
-    display: none; /* Oculta el menú en pantallas pequeñas */
-    flex-direction: column;
-    width: 100%;
-    background-color: #282c34;
-    padding: 1rem 0;
-    position: absolute;
-    top: 70px; /* Justo debajo del header */
-    left: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Ocultar menú principal en móvil */
   }
 
   .header__menu-toggle {
-    display: block; /* Muestra el botón de hamburguesa */
+    display: block; /* Mostrar el botón de menú */
   }
 
-  /* Cuando el menú está abierto, se muestra */
-  .header__nav--open {
+  .header__nav--mobile {
+    display: none; /* Menú oculto en dispositivos móviles */
+  }
+
+  .header__nav--mobile.open {
     display: flex;
-  }
-
-  .header__menu li {
-    padding: 1rem;
-    text-align: center;
   }
 
   .header__menu a {
     font-size: 1.2rem;
-    display: block;
-    padding: 15px;
-    width: 100%;
+    padding: 1rem;
   }
 }
