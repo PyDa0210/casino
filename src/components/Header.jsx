@@ -6,12 +6,10 @@ import UserInfo from './UserInfo';
 import { FaDice } from 'react-icons/fa';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar el menú
 
-  // Alternar el estado del menú
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  // Función para alternar el estado del menú
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <header className="header">
@@ -23,19 +21,29 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Botón de menú */}
+        {/* Botón de hamburguesa */}
         <button className="header__menu-toggle" onClick={toggleMenu}>
-          &#9776;
+          &#9776; {/* Símbolo de hamburguesa */}
         </button>
 
-        {/* Menú de navegación en dispositivos móviles */}
-        <nav className={`header__nav ${isMenuOpen ? 'header__nav--mobile open' : 'header__nav--mobile'}`}>
+        {/* Menú de navegación */}
+        <nav className={`header__nav ${isMenuOpen ? 'open' : ''}`}>
           <ul className="header__menu">
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/bet">Apuestas</Link></li>
-            <li><Link to="/account">Cuenta</Link></li>
-            <li><Link to="/adminBalance">Balance</Link></li>
-            <li><Link to="/login">Cerrar Sesión</Link></li>
+            <li>
+              <Link to="/">Inicio</Link>
+            </li>
+            <li>
+              <Link to="/bet">Apuestas</Link>
+            </li>
+            <li>
+              <Link to="/account">Cuenta</Link>
+            </li>
+            <li>
+              <Link to="/adminBalance">Balance</Link>
+            </li>
+            <li>
+              <Link to="/login">Cerrar Sesión</Link>
+            </li>
           </ul>
         </nav>
       </div>
