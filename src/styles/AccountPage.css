@@ -1,4 +1,4 @@
-/* Contenedor principal */
+/* Estilos del contenedor principal */
 .account-container {
     background-color: #fff;
     border-radius: 15px;
@@ -9,14 +9,14 @@
     animation: fadeIn 0.8s ease-out;
 }
 
-/* Título */
+/* Título de la tarjeta */
 .account-card h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Botón básico */
+/* Botones generales */
 .button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -79,18 +79,60 @@
 }
 
 .floating-button button {
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: none;
-    background-color: #333;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background-color: #007BFF;
     color: #fff;
-    border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.floating-button button:hover {
-    background-color: #555;
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .account-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .account-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .floating-button {
+        top: 90%; /* Ajustamos la posición para que no se quede fuera de la vista */
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
+/* Ajustes adicionales para pantallas pequeñas */
+@media (max-width: 480px) {
+    .account-container {
+        padding: 15px;
+    }
 
+    .account-card h1 {
+        font-size: 1.3rem;
+    }
 
+    .button {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .floating-button button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}

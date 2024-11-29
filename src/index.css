@@ -1,46 +1,75 @@
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    background: linear-gradient(135deg, #5e35b1, #ff6f61, #ff8a50);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    text-align: center; /* Centra el texto en las vistas, si es necesario */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #5e35b1, #ff6f61, #ff8a50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box; /* Asegura que el padding y margin no afecten al ancho y alto */
+}
+
+::webkit-scrollbar {
+  width: 13px;
+}
+
+::webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+::webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #5e35b1, #ff6f61, #ff8a50);
+  border-radius: 20px;
+  border: 3px solid #f4f4f4;
+  background-size: 300% 300%;
+  animation: scrollThumbAnimation 2s linear infinite;
+}
+
+::webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff6f61, #ff8a50, #5e35b1);
+}
+
+@keyframes scrollThumbAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  body {
+      background: linear-gradient(135deg, #ff6f61, #ff8a50, #5e35b1); /* Puede cambiar el gradiente para un mejor contraste en móvil */
+      flex-direction: column;
+      justify-content: flex-start; /* Alinea el contenido en la parte superior */
+      padding: 10px; /* Da un pequeño padding a los lados en pantallas pequeñas */
   }
 
-  ::-webkit-scrollbar {
-    width: 13px; /* Ancho de la barra de scroll */
+  ::webkit-scrollbar {
+      width: 8px; /* Reduce el tamaño de la barra de desplazamiento */
   }
-  
-  ::-webkit-scrollbar-track {
-    background: #f4f4f4; /* Color del fondo del track de scroll */
+
+  ::webkit-scrollbar-thumb {
+      background-size: 150% 150%; /* Reduce el tamaño de la animación para un mejor rendimiento en dispositivos móviles */
   }
-  
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #5e35b1, #ff6f61, #ff8a50);
-    border-radius: 20px; /* Bordes redondeados para dar forma de serpiente */
-    border: 3px solid #f4f4f4; /* Separación visual con el track */
-    background-size: 300% 300%; /* Tamaño del gradiente animado */
-    animation: scrollThumbAnimation 2s linear infinite; /* Animación infinita */
+}
+
+/* Media Queries para pantallas más pequeñas (móviles) */
+@media (max-width: 480px) {
+  body {
+      font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
   }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #ff6f61, #ff8a50, #5e35b1); /* Cambia colores en hover */
+
+  ::webkit-scrollbar {
+      width: 5px; /* Ajusta el ancho de la barra de desplazamiento */
   }
-  
-  /* Animación para el gradiente */
-  @keyframes scrollThumbAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+}

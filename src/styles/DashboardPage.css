@@ -1,17 +1,19 @@
-
+/* Dashboard Container */
 .dashboard-container {
     position: relative;
     padding: 20px;
     min-height: 100vh;
 }
+
+/* Button para la cuenta */
 .account-button {
     position: absolute;
     top: 20px;
-    right: -50px;
+    right: 20px;
 }
 
 .account-button button {
-    background-color: #673ab7; 
+    background-color: #673ab7;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -20,31 +22,33 @@
 }
 
 .account-button button:hover {
-    background-color: #5e2a8c; 
+    background-color: #5e2a8c;
 }
 
+/* Contenedor de los partidos */
 .matches-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     margin-top: 50px;
+    flex-wrap: wrap; /* Para que los elementos se ajusten en pantallas más pequeñas */
 }
 
-
+/* Card del Dashboard */
 .dashboard-card {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    flex: 1; 
+    flex: 1;
     max-width: 350px;
-    min-width: 280px; 
+    min-width: 280px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dashboard-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .dashboard-card h3 {
@@ -69,6 +73,38 @@
     cursor: not-allowed;
 }
 
-.dashboard-card button:hover {
-    background-color: #5e2a8c;
+/* Media Queries para Pantallas Móviles */
+@media (max-width: 768px) {
+    .matches-container {
+        flex-direction: column; /* Apilar las tarjetas en pantallas pequeñas */
+        align-items: center; /* Centrar las tarjetas */
+    }
+
+    .dashboard-card {
+        max-width: 100%;
+        margin-bottom: 20px; /* Separar tarjetas en móviles */
+    }
+
+    .account-button {
+        right: 10px;
+        top: 10px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 1.25rem; /* Reducir tamaño de los títulos en móviles */
+    }
+
+    .dashboard-card button {
+        padding: 12px 20px; /* Asegurar que los botones no sean demasiado pequeños */
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-card h3 {
+        font-size: 1rem; /* Más pequeño en pantallas muy pequeñas */
+    }
+
+    .dashboard-card button {
+        padding: 10px 15px; /* Asegurar un tamaño adecuado del botón */
+    }
 }

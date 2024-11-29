@@ -1,4 +1,4 @@
-
+/* Estilos generales de la tarjeta */
 .card {
     background-color: #fff;
     border-radius: 15px;
@@ -9,17 +9,20 @@
     animation: fadeIn 0.8s ease-out;
 }
 
+/* Título de la tarjeta */
 .card h1 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #5e35b1; /* Morado oscuro */
 }
 
+/* Texto de la tarjeta */
 .card p {
     color: #d32f2f; /* Rojo opaco */
     font-size: 0.9rem;
 }
 
+/* Estilos de los campos de entrada */
 .card input {
     width: calc(100% - 20px);
     padding: 10px;
@@ -31,7 +34,7 @@
     color: #333;
 }
 
-/* Botones */
+/* Estilos de los botones */
 .card button {
     width: 100%;
     padding: 10px;
@@ -61,4 +64,46 @@
         opacity: 1;
         transform: translateY(0);
     }
-}  
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Hacer que la tarjeta ocupe el 90% del ancho */
+        padding: 30px 20px; /* Reducir el padding */
+    }
+
+    .card h1 {
+        font-size: 1.5rem; /* Reducir el tamaño del título */
+    }
+
+    .card input {
+        padding: 8px; /* Reducir el padding del input */
+    }
+
+    .card button {
+        padding: 12px; /* Ajustar padding del botón */
+        font-size: 0.9rem; /* Reducir tamaño de la fuente */
+    }
+}
+
+/* Media query para pantallas muy pequeñas (móviles en modo retrato) */
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Que ocupe el 100% del ancho en móviles */
+        padding: 20px 15px; /* Más padding reducido en móviles */
+    }
+
+    .card h1 {
+        font-size: 1.3rem; /* Reducir aún más el tamaño del título */
+    }
+
+    .card input {
+        padding: 8px; /* Ajustar input */
+    }
+
+    .card button {
+        padding: 10px; /* Reducir padding en el botón */
+        font-size: 0.9rem; /* Ajustar tamaño de la fuente */
+    }
+}

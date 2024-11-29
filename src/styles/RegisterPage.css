@@ -1,4 +1,4 @@
-
+/* Estilos generales de la tarjeta */
 .card {
     background-color: #fff;
     border-radius: 15px;
@@ -9,19 +9,21 @@
     animation: fadeIn 0.8s ease-out;
 }
 
+/* Título de la tarjeta */
 .card h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #5e35b1; /* Morado oscuro */
 }
 
+/* Texto dentro de la tarjeta */
 .card p {
     font-size: 0.9rem;
     color: #333;
 }
 
-
-.card input {
+/* Campos de entrada */
+.card input, .card select {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 15px;
@@ -32,17 +34,7 @@
     color: #333;
 }
 
-.card select {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    outline: none;
-    color: #333;
-}
-
+/* Botones */
 .card button {
     width: 100%;
     padding: 10px;
@@ -62,24 +54,33 @@
     transform: scale(1.05);
 }
 
+/* Mensajes de error */
 .card .error {
-    color: #d32f2f; /* Rojo opaco */
-    margin-top: 10px;
+    color: #d32f2f; /* Rojo para errores */
 }
 
-.card .success {
-    color: #388e3c; /* Verde */
-    margin-top: 10px;
-}
-
-/* Animación de entrada */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
+/* Media Query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%; /* Ajustar el tamaño en pantallas más pequeñas */
+        padding: 20px; /* Reducir el padding */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .card h2 {
+        font-size: 1.5rem; /* Reducir el tamaño de la fuente */
+    }
+
+    .card input, .card select, .card button {
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+        padding: 8px; /* Reducir el padding de los inputs y botones */
+    }
+
+    /* En dispositivos más pequeños, apilar los elementos de manera más vertical */
+    .card {
+        padding: 20px 15px; /* Menos padding para evitar exceso de espacio */
+    }
+
+    .card p {
+        font-size: 0.8rem; /* Reducir tamaño del texto en párrafos */
     }
 }
