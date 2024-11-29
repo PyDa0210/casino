@@ -6,9 +6,9 @@ import UserInfo from './UserInfo';
 import { FaDice } from 'react-icons/fa';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar el menú
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Función para alternar el estado del menú
+  // Función para alternar el menú
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
@@ -23,11 +23,11 @@ const Header = () => {
 
         {/* Botón de hamburguesa */}
         <button className="header__menu-toggle" onClick={toggleMenu}>
-          &#9776; {/* Símbolo de hamburguesa */}
+          &#9776; {/* Ícono de hamburguesa */}
         </button>
 
         {/* Menú de navegación */}
-        <nav className={`header__nav ${isMenuOpen ? 'open' : ''}`}>
+        <nav className={`header__nav ${isMenuOpen ? 'header__menu--open' : ''}`}>
           <ul className="header__menu">
             <li>
               <Link to="/">Inicio</Link>

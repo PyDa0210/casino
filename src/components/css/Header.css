@@ -75,30 +75,39 @@
   background: none;
   border: none;
   color: white;
-  font-size: 30px;
+  font-size: 2rem;
   cursor: pointer;
 }
 
-/* Estilos para el menú en dispositivos pequeños (responsive) */
+.header__menu-toggle:focus {
+  outline: none;
+}
+
+/* Mostrar el botón de hamburguesa en dispositivos móviles */
 @media (max-width: 768px) {
   .header__menu {
-    display: none; /* Menú oculto en móviles por defecto */
-    flex-direction: column;
+    display: none; /* Ocultar los enlaces por defecto */
+    flex-direction: column; /* Cambiar a columna para móviles */
     width: 100%;
-    background-color: #282c34;
     position: absolute;
-    top: 80px;
+    top: 80px; /* Asegurarse de que los enlaces no se superpongan al header */
     left: 0;
-    padding: 10px 0;
-    gap: 0;
+    background-color: #282c34;
+    padding: 1rem;
   }
 
-  .header__menu-toggle {
-    display: block; /* Mostrar el botón de hamburguesa */
+  .header__menu li {
+    text-align: center;
+    width: 100%;
   }
 
-  /* Mostrar el menú cuando se activa el estado de abrir (isMenuOpen) */
-  .header__nav.open .header__menu {
+  /* Mostrar el menú cuando se activa el estado `isMenuOpen` en React */
+  .header__menu--open {
     display: flex;
+  }
+
+  /* Mostrar el botón de hamburguesa en móvil */
+  .header__menu-toggle {
+    display: block; /* Mostrar el botón en móviles */
   }
 }
