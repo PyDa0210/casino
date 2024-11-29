@@ -8,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 0;
 }
 
 /* Contenedor Principal */
@@ -19,6 +20,7 @@ body {
   max-width: 500px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   text-align: center;
+  overflow: hidden; /* Asegura que no se desborden elementos */
 }
 
 /* Encabezado */
@@ -70,57 +72,55 @@ body {
   color: #333;
 }
 
+/* Botón */
 .bet-page button {
-  background: #ff6f61;
+  background-color: #ff6f61;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsiveness para móviles */
-@media (max-width: 600px) {
+.bet-page button:hover {
+  background-color: #ff8a50;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
   .bet-page {
-    padding: 1rem;
-    width: 95%; /* Asegura que el contenido ocupe casi todo el ancho */
-    max-width: 100%;
+    width: 95%; /* Reduces the width to fit better on mobile */
+    padding: 1.5rem; /* Reduce padding on smaller screens */
   }
 
   .bet-page h1 {
-    font-size: 1.5rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
-  }
-
-  .bet-page p {
-    font-size: 0.9rem; /* Ajustar el tamaño del texto */
+    font-size: 1.8rem; /* Reduce the size of the heading */
   }
 
   .bet-page ul li {
-    font-size: 0.9rem; /* Reducir el tamaño de las listas */
-  }
-
-  .bet-page form {
-    gap: 0.8rem; /* Reducir el espacio entre los elementos del formulario */
+    font-size: 0.9rem; /* Make list items smaller */
+    padding: 0.4rem; /* Adjust padding for smaller screen */
   }
 
   .bet-page input, .bet-page button {
-    padding: 0.6rem;
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Reduce the font size of input and button */
   }
 }
 
-@media (max-width: 400px) {
+/* Styles for Extra Small Devices */
+@media (max-width: 480px) {
   .bet-page h1 {
-    font-size: 1.2rem; /* Ajuste aún mayor en pantallas extra pequeñas */
+    font-size: 1.6rem; /* Even smaller text size on very small screens */
   }
 
   .bet-page p {
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Slightly smaller text for paragraphs */
   }
 
   .bet-page ul li {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Make list items even smaller */
   }
 
   .bet-page input, .bet-page button {
-    padding: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Smaller font size for inputs and buttons */
+    padding: 0.7rem; /* Adjust padding to fit small screens */
   }
 }

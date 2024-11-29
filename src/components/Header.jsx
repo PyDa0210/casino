@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './css/Header.css';
 import logo from '../assets/favicon.webp';
 import UserInfo from './UserInfo';
 import { FaDice } from 'react-icons/fa';
 
-
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Función para alternar la visibilidad del menú
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <header className="header">
       <div className="header__content">
@@ -16,7 +20,10 @@ const Header = () => {
             Bienvenido,&nbsp;<FaDice className="header__dice-icon" />&nbsp;<UserInfo showEmail={false} showBalance={false} />
           </span>
         </Link>
-        <nav>
+        <button className="header__menu-toggle" onClick={toggleMenu}>
+          <span className="header__menu-icon"></span>
+        </button>
+        <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
           <ul className="header__menu">
             <li>
               <Link to="/">Inicio</Link>

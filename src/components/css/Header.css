@@ -11,7 +11,6 @@
   z-index: 1000;
 }
 
-/* Contenedor del contenido del Header */
 .header__content {
   display: flex;
   justify-content: space-between;
@@ -21,7 +20,6 @@
   padding: 0.5rem 1rem;
 }
 
-/* Logo */
 .header__logo {
   display: flex;
   align-items: center;
@@ -38,92 +36,139 @@
   transition: transform 0.3s ease;
 }
 
-/* Estilo de la imagen del logo en hover */
-.header__logo-image:hover {
-  transform: scale(1.1); /* Efecto de ampliación al pasar el mouse */
+.header__menu-text {
+  display: flex;
+  align-items: center;
 }
 
-/* Estilos del menú y enlaces */
-.header__nav {
+.header__dice-icon {
+  margin-left: 5px;
+}
+
+.header__menu {
+  list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.header__nav a {
-  color: white;
+.header__menu li {
+  margin: 0;
+}
+
+.header__menu a {
   text-decoration: none;
+  color: white;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s;
+  padding: 10px;
+  transition: color 0.3s ease;
 }
 
-.header__nav a:hover {
-  background-color: #5e35b1; /* Morado oscuro */
-  border-radius: 5px;
+.header__menu a:hover {
+  color: #61dafb;
 }
 
-/* Media Queries para dispositivos móviles */
+/* Botón hamburguesa para móviles */
+.header__menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.header__menu-icon {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  position: relative;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.header__menu-icon::before,
+.header__menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.header__menu-icon::before {
+  top: -8px;
+}
+
+.header__menu-icon::after {
+  top: 8px;
+}
+
+/* Cambios en la apariencia del icono cuando se abre el menú */
+.header__menu-toggle.open .header__menu-icon {
+  background: transparent;
+}
+
+.header__menu-toggle.open .header__menu-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.header__menu-toggle.open .header__menu-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Menú desplegable */
+.header__nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.header__nav--open {
+  display: block;
+}
+
+.header__menu {
+  display: flex;
+  gap: 20px;
+}
+
 @media (max-width: 768px) {
-  /* Cambiar disposición del header en pantallas pequeñas */
-  .header__content {
-      flex-direction: column;
-      align-items: flex-start; /* Alineamos el contenido a la izquierda */
+  /* Ocultar el menú en pantallas pequeñas */
+  .header__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #282c34;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 999;
   }
 
-  /* Redimensionar el logo */
-  .header__logo-image {
-      width: 40px;
-      height: 40px;
+  /* Mostrar el menú cuando se activa */
+  .header__nav--open {
+    display: block;
   }
 
-  /* Menú para móviles */
-  .header__nav {
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-      margin-top: 10px;
-      display: none; /* Escondemos el menú en móviles */
+  /* Mostrar botón hamburguesa */
+  .header__menu-toggle {
+    display: block;
   }
 
-  .header__nav.active {
-      display: flex; /* Mostrar menú si está activo */
+  /* Estilos para los enlaces en el menú móvil */
+  .header__menu a {
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #444;
   }
 
-  /* Ajustar el tamaño de los enlaces */
-  .header__nav a {
-      font-size: 0.9rem;
-      padding: 0.8rem;
-      text-align: left;
-      width: 100%;
-  }
-
-  /* Ajuste del logo en móviles */
-  .header__logo {
-      justify-content: flex-start;
-      width: 100%;
-  }
-
-  /* Añadir un botón para mostrar el menú en dispositivos móviles */
-  .header__menu-button {
-      display: block;
-      background-color: transparent;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 10px;
-  }
-}
-
-/* Para pantallas aún más pequeñas (por ejemplo, móviles en modo retrato) */
-@media (max-width: 480px) {
-  .header__logo-image {
-      width: 35px;
-      height: 35px;
-  }
-
-  .header__nav a {
-      font-size: 0.85rem;
-      padding: 0.6rem;
+  /* Evitar que el menú se solape con el contenido */
+  .header__menu a:last-child {
+    border-bottom: none;
   }
 }
